@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Kotak Berubah Warna</title>
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+    }
+        #kotak {
+            width: 100px;
+            height: 100px;
+            background-color: #ff0000;
+            cursor: pointer;
+            
+        }
+    </style>
+</head>
+<body>
+    <div id="kotak"></div>
+
+    <script>
+        var kotak = document.getElementById('kotak');
+
+        kotak.addEventListener('click', function() {
+            var randomColor = getRandomColor();
+            kotak.style.backgroundColor = randomColor;
+        });
+
+        function getRandomColor() {
+            var letters = '0123456789ABCDEF';
+            var color = '#';
+            for (var i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        }
+    </script>
+</body>
+</html>
